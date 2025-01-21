@@ -1,3 +1,6 @@
+from menu import MenuItem
+
+
 class CoffeeMaker:
     """Models the machine that makes the coffee"""
     def __init__(self):
@@ -22,7 +25,7 @@ class CoffeeMaker:
                 can_make = False
         return can_make
 
-    def make_coffee(self, order):
+    def make_coffee(self, order: MenuItem):
         """Deducts the required ingredients from the resources."""
         for item in order.ingredients:
             self.resources[item] -= order.ingredients[item]
